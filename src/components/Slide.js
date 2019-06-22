@@ -11,6 +11,14 @@ class Slide extends HTMLElement {
 
   connectedCallback() {
     this.render();
+    this.toggleClass();
+    EventEmitter.subscribe(this.toggleClass.bind(this));
+  }
+
+  toggleClass() {
+    const activeBar = EventEmitter.getState('progressBar', 'activeBar');
+    const method = activeBar === this.index ? 'add' : 'remove';
+    this.classList[method]('active');
   }
 
   render() {

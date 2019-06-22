@@ -1,4 +1,5 @@
 import EventEmitter from '../actions/EventEmitter';
+import ProgressBar from './ProgressBar/index';
 import Slide from './Slide';
 
 
@@ -25,7 +26,9 @@ class SlidesList extends HTMLElement {
 
   render() {
     const { slides } = this.activeStory;
+    const progressBar = new ProgressBar(slides.length);
     slides.map(this.createSlide.bind(this));
+    this.appendChild(progressBar);
   }
 }
 
