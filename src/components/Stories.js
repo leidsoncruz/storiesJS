@@ -1,4 +1,5 @@
 import Modal from './Modal';
+import StoriesList from './StoriesList';
 
 class Stories extends HTMLElement {
   constructor({ stories }, loadStories) {
@@ -14,6 +15,8 @@ class Stories extends HTMLElement {
 
   render() {
     const modal = new Modal();
+    const storiesList = new StoriesList();
+    this.appendChild(storiesList);
     this.appendChild(modal);
   }
 }
