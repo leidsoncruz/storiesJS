@@ -1,4 +1,5 @@
 import EventEmitter from '../actions/EventEmitter';
+import Slide from './Slide';
 
 
 class SlidesList extends HTMLElement {
@@ -17,8 +18,14 @@ class SlidesList extends HTMLElement {
     this.render();
   }
 
+  createSlide(slideData, index) {
+    const slide = new Slide(slideData, index);
+    this.appendChild(slide);
+  }
+
   render() {
     const { slides } = this.activeStory;
+    slides.map(this.createSlide.bind(this));
   }
 }
 
