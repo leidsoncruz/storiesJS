@@ -1,5 +1,6 @@
 /* eslint no-useless-constructor: "off" */
 import EventEmitter from '../actions/EventEmitter';
+import Story from './Story';
 
 class StoriesList extends HTMLElement {
   constructor() {
@@ -10,8 +11,14 @@ class StoriesList extends HTMLElement {
     this.render();
   }
 
+  createStory(storyObject) {
+    const story = new Story(storyObject);
+    this.appendChild(story);
+  }
+
   render() {
     const stories = EventEmitter.getState('stories', 'stories');
+    stories.map(this.createStory.bind(this));
   }
 }
 
