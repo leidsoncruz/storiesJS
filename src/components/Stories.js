@@ -1,3 +1,4 @@
+import Modal from './Modal';
 
 class Stories extends HTMLElement {
   constructor({ stories }, loadStories) {
@@ -8,8 +9,13 @@ class Stories extends HTMLElement {
 
   connectedCallback() {
     this.loadStories(this.stories);
+    this.render();
   }
 
+  render() {
+    const modal = new Modal();
+    this.appendChild(modal);
+  }
 }
 
 customElements.define('stories-js', Stories);
