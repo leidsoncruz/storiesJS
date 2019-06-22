@@ -1,0 +1,29 @@
+{
+	"stories": [{
+		"id": 1,
+		"title": "Story 01",
+		"preview": "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/8.jpg",
+		"slides": [{
+			"type": "image",
+			"title": "Title slide 01",
+			"src": "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/8.jpg"
+		}, {
+			"type": "image",
+			"title": "Title slide 02",
+			"src": "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/9.jpg"
+		}]
+	}, {
+		"id": 2,
+		"title": "Story 02",
+		"preview": "",
+		"slides": [{
+			"type": "video",
+			"preview": "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/2.jpg",
+			"title": "Title slide 02 01",
+			"src": "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/2.mp4"
+		}, {
+			"title": "Title slide 02 02",
+			"src": "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/6.jpg"
+		}]
+	}]
+}
