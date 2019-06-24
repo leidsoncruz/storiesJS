@@ -1,5 +1,5 @@
 /* eslint no-useless-constructor: "off" */
-import screenfull from 'screenfull';
+import Screenfull from './Screenfull';
 import EventEmitter from '../actions/EventEmitter';
 import { removeChildren } from '../utils/functions';
 
@@ -8,6 +8,7 @@ import SlidesList from './SlidesList';
 class Modal extends HTMLElement {
   constructor() {
     super();
+    Screenfull.onChange();
   }
 
   connectedCallback() {
@@ -25,8 +26,7 @@ class Modal extends HTMLElement {
 
     const slidesList = new SlidesList();
     this.appendChild(slidesList);
-
-    screenfull.request(this);
+    Screenfull.request(this);
   }
 }
 
