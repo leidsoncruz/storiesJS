@@ -1,6 +1,7 @@
 /* eslint no-useless-constructor: "off" */
 import screenfull from 'screenfull';
 import EventEmitter from '../actions/EventEmitter';
+import { removeChildren } from '../utils/functions';
 
 import SlidesList from './SlidesList';
 
@@ -18,6 +19,7 @@ class Modal extends HTMLElement {
     const activeStory = EventEmitter.getState('stories', 'activeStory');
 
     if (activeStory.slides.length <= 0) {
+      removeChildren(this);
       return;
     }
 

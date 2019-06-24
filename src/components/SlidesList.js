@@ -1,6 +1,7 @@
 import EventEmitter from '../actions/EventEmitter';
 import ProgressBar from './ProgressBar/index';
 import Slide from './Slide';
+import { removeChildren } from '../utils/functions';
 
 
 class SlidesList extends HTMLElement {
@@ -15,6 +16,7 @@ class SlidesList extends HTMLElement {
   }
 
   updateState() {
+    removeChildren(this);
     this.activeStory = EventEmitter.getState('stories', 'activeStory');
     this.render();
   }
